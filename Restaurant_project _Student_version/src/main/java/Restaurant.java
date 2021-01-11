@@ -88,4 +88,8 @@ public class Restaurant {
     public void selectOrderItem(String item) {
         itemName.add(item);
     }
+
+    public int getSizeOfMenu() {
+        return getMenu().size();
+    }
 }
