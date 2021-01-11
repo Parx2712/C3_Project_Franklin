@@ -67,12 +67,22 @@ class RestaurantTest {
 
     @Test
     public void removing_item_that_does_not_exist_should_throw_exception() {
-
         restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
         restaurant.addToMenu("Sweet corn soup", 119);
         restaurant.addToMenu("Vegetable lasagne", 269);
 
         assertThrows(itemNotFoundException.class, () -> restaurant.removeFromMenu("French fries"));
     }
+
     // <<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void calculate_order_value_method_should_sum_the_menu_item_prices() {
+        restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
+        restaurant.addToMenu("Sweet corn soup", 119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.selectOrderItem("Sweet corn soup");
+        restaurant.selectOrderItem("Vegetable lasagne");
+        int actualOrderAmount = restaurant.calculateTotalOrderCost(restaurant.getOrderItems());
+        assertEquals(388, actualOrderAmount);
+    }
 }
