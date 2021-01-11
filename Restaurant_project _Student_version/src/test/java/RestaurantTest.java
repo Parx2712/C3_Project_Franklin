@@ -82,7 +82,7 @@ class RestaurantTest {
         restaurant.addToMenu("Vegetable lasagne", 269);
         restaurant.selectOrderItem("Sweet corn soup");
         restaurant.selectOrderItem("Vegetable lasagne");
-        int actualOrderAmount = restaurant.calculateTotalOrderCost(restaurant.getOrderItems());
+        int actualOrderAmount = restaurant.calculateTotalCostOfOrderItems(restaurant.getOrderItems());
         assertEquals(388, actualOrderAmount);
     }
 }

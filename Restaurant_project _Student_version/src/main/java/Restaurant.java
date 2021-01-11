@@ -70,7 +70,7 @@ public class Restaurant {
         return name;
     }
 
-    public int calculateTotalOrderCost(List<String> itemNames) {
+    public int calculateTotalCostOfOrderItems(List<String> itemNames) {
         int orderTotal = 0;
         for (String name : itemNames) {
             for (Item item : menu) {
